@@ -4,14 +4,20 @@ import { checkValidData } from "../utils/validate";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const email = useRef(null);
   const password = useRef(null);
   const name = useRef("");
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [errorMessage, setErrorMessage] = useState(null);
 
@@ -32,7 +38,19 @@ const Login = () => {
         )
           .then((userCredential) => {
             const user = userCredential.user;
-            console.log(user);
+            updateProfile(auth.currentUser, {
+              displayName: name.current.value,
+            })
+              .then(() => {
+                const { uid, email, displayName } = auth.currentUser;
+                dispatch(
+                  addUser({ uid: uid, email: email, displayName: displayName })
+                );
+                navigate("/browse");
+              })
+              .catch((error) => {
+                setErrorMessage(error.message);
+              });
           })
           .catch((error) => {
             const errorCode = error.code;
@@ -47,7 +65,7 @@ const Login = () => {
         )
           .then((userCredential) => {
             const user = userCredential.user;
-            console.log(user);
+            navigate("/browse");
           })
           .catch((error) => {
             const errorCode = error.code;
@@ -70,7 +88,7 @@ const Login = () => {
           src="https://assets.nflxext.com/ffe/siteui/vlv3/fa4630b1-ca1e-4788-94a9-eccef9f7af86/web_tall_panel/IN-en-20250407-TRIFECTA-perspective_8be2cd93-f2e6-4e34-acba-05b716385704_large.jpg"
         />
       </div>
-      <div className="relative z-10">
+      <div>
         <Header />
         <form
           className="w-3/12 text-white absolute bg-black/80 my-36 mx-auto right-0 left-0 p-12 rounded-lg"
