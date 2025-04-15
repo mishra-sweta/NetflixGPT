@@ -13,6 +13,10 @@
 - Create SignUp in Firebase (User Account)
 - Implement Sign In user API
 - Created Redux Store with userSlice
+- Implemented SignOut
+- Update Profile
+- Redirect to login page if user is not logged in and vice versa
+- Unsubscribed to the onAuthStateChanged Callback
 
 # Features
 
