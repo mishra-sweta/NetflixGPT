@@ -20,7 +20,13 @@
 - Add hard coded values to constants file
 - Register TMDB API & create an app & get access token
 - Get Data from TMDB now playing movies list API
-- Store it in redux store
+- making a movie Slice
+- Custom Hook for Now Playing
+- Store movies in redux store
+- Planning the browse page
+- Created MainContainer with all the components (mainContainer - VideoTitle & videoBackGround)
+- Fetch dat for trailer video and updated store creating a reducer
+- Embedded the YT video and added autoplay
 
 # Features
 
@@ -39,3 +45,16 @@
 - Netflix GPT
   - Search Bar
   - Movie Suggestions
+
+# Browse Page UI
+
+- Header
+
+- MainVideoContainer
+
+  - VideoBackgroud
+  - VideoTitle
+
+- Secondary container
+  - MovieList \* n
+    - Cards \* n

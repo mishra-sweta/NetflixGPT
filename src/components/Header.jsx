@@ -44,7 +44,7 @@ const Header = () => {
   }, [dispatch, navigate]);
 
   return (
-    <div className="w-full bg-gradient-to-t to-black py-2 px-4 relative flex">
+    <div className="w-full bg-gradient-to-t to-black py-2 px-4 flex absolute top-0 left-0 z-20">
       <img className="w-48" src={NETFLIX_LOGO} alt="Netflix Logo" />
       {user && (
         <div className="p-3 ml-auto flex">
