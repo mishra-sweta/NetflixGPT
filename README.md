@@ -32,6 +32,10 @@
 - Build MovieCard
 - TMDB Img CDN URL
 - Made the Browse page look good
+- usePopularMovies , useTopRatedMovies and Upcoming custom hooks
+- stored data in Movie slice
+- updated the MovieLists with the new data
+- GPT Search feature
 
 # Features
 
