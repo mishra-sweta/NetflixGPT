@@ -27,6 +27,11 @@
 - Created MainContainer with all the components (mainContainer - VideoTitle & videoBackGround)
 - Fetch dat for trailer video and updated store creating a reducer
 - Embedded the YT video and added autoplay
+- Build Secondary Component
+- Build MovieList
+- Build MovieCard
+- TMDB Img CDN URL
+- Made the Browse page look good
 
 # Features
 
