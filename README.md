@@ -36,6 +36,9 @@
 - stored data in Movie slice
 - updated the MovieLists with the new data
 - GPT Search feature
+- GPT SearchBar
+- Multi-language feature in our app
+- Integrate GPT APIs
 
 # Features
 
