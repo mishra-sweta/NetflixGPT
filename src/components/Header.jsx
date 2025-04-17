@@ -59,13 +59,17 @@ const Header = () => {
   const toggleGptSearch = useSelector((store) => store.gpt.toggleGptSearch);
 
   return (
-    <div className="w-full bg-gradient-to-t to-black py-2 px-4 flex absolute top-0 left-0 z-20">
-      <img className="w-48" src={NETFLIX_LOGO} alt="Netflix Logo" />
+    <div className="w-full bg-gradient-to-t to-black py-2 px-4 flex flex-col md:flex-row relative top-0 left-0 z-20">
+      <img
+        className="w-48 mx-auto md:mx-0"
+        src={NETFLIX_LOGO}
+        alt="Netflix Logo"
+      />
       {user && (
-        <div className="p-3 ml-auto flex">
+        <div className="md:p-2 mx-auto md:mx-0 md:ml-auto flex">
           {toggleGptSearch && (
             <select
-              className="m-2  text-white cursor-pointer bg-gray-800 px-4 rounded"
+              className="m-4 md:m-3 text-white cursor-pointer bg-gray-800 px-2 rounded "
               onChange={handleLanguageChange}
             >
               {LANGUAGE_PREFERENCE.map((lang) => (
@@ -76,7 +80,7 @@ const Header = () => {
             </select>
           )}
           <button
-            className="m-2 text-white cursor-pointer bg-purple-700 px-4 rounded"
+            className="m-4 md:m-3 text-white cursor-pointer bg-purple-700 px-2 rounded "
             onClick={handleGptSearch}
           >
             {toggleGptSearch ? "Homepage" : "Gpt Search"}

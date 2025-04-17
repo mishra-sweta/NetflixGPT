@@ -16,15 +16,15 @@ const Browse = () => {
   useUpcomingMovies();
   const gptSearch = useSelector((store) => store.gpt.toggleGptSearch);
   return (
-    <div className="relative w-full h-full overflow-x-hidden">
+    <div className="relative w-full h-full overflow-x-hidden text-sm md:text-lg ">
       <Header />
       {gptSearch ? (
         <GptSearch />
       ) : (
-        <>
+        <div className="fixed inset-0 overflow-y-auto overflow-x-hidden">
           <MainContainer />
           <SecondaryContainer />
-        </>
+        </div>
       )}
     </div>
   );

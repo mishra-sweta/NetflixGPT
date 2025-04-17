@@ -30,7 +30,7 @@ const useGetMovieTrailer = (movieId) => {
 
   useEffect(() => {
     !trailer && movieVideos();
-  }, []); // ✅ this line ensures it runs only when movieId changes
+  }, []);
 };
 
 export default useGetMovieTrailer;
