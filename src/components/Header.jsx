@@ -69,7 +69,7 @@ const Header = () => {
         <div className="md:p-2 mx-auto md:mx-0 md:ml-auto flex">
           {toggleGptSearch && (
             <select
-              className="m-4 md:m-3 text-white cursor-pointer bg-gray-800 px-2 rounded "
+              className="m-2 md:m-3 text-white cursor-pointer bg-gray-800 px-2 rounded "
               onChange={handleLanguageChange}
             >
               {LANGUAGE_PREFERENCE.map((lang) => (
@@ -80,12 +80,15 @@ const Header = () => {
             </select>
           )}
           <button
-            className="m-4 md:m-3 text-white cursor-pointer bg-purple-700 px-2 rounded "
+            className="m-2 md:m-3 text-white cursor-pointer bg-purple-700 px-2 rounded "
             onClick={handleGptSearch}
           >
             {toggleGptSearch ? "Homepage" : "Gpt Search"}
           </button>
-          <img className="w-12 h-12 m-2" src={USER_AVATAR} />
+          <img
+            className="w-8 h-8 md:w-12 md:h-12 m-2 rounded"
+            src={USER_AVATAR}
+          />
           <button
             className="m-2 font-bold text-white cursor-pointer  to-gray-100"
             onClick={handleSignout}
