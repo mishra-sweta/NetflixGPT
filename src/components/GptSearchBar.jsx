@@ -43,7 +43,6 @@ const GptSearchBar = () => {
       });
 
       const moviesNames = response.choices[0]?.message?.content.split(",");
-      console.log(moviesNames);
 
       const data = moviesNames.map((movie) => searchMovieTMDB(movie.trim()));
       const tmdbResults = await Promise.all(data);

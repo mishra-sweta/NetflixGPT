@@ -38,7 +38,11 @@
 - GPT Search feature
 - GPT SearchBar
 - Multi-language feature in our app
-- Integrate GPT APIs
+- Integrate Groq-SDK GPT APIs
+- Configure it with the needed prompt to wrap the input
+- Get the movie details from tmdb of the gpt recieved data
+- Put it in redux Store
+- gptSuggestions Component
 
 # Features
 
