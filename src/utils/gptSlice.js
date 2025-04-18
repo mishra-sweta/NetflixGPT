@@ -4,7 +4,7 @@ const gptSlice = createSlice({
   name: "gpt",
   initialState: {
     toggleGptSearch: false,
-    moviesNames: null,
+    moviesNames: [],
     tmdbResults: null,
   },
   reducers: {

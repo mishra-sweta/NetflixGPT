@@ -3,7 +3,7 @@ import MovieList from "./MovieList";
 
 const GptSuggestions = () => {
   const { moviesNames, tmdbResults } = useSelector((store) => store.gpt);
-  if (!moviesNames) return null;
+  if (moviesNames.length === 0) return null;
 
   return (
     <div className="p-4, m-4 bg-black/80 text-white ">

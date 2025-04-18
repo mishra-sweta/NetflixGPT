@@ -5,7 +5,7 @@ import client from "../utils/groq";
 import { API_OPTIONS } from "../utils/constants";
 import { addGptMovieResults } from "../utils/gptSlice";
 
-const GptSearchBar = () => {
+const GptSearchBar = ({ setIsLoading }) => {
   const langConfig = useSelector((store) => store.config.lang);
   const searchInput = useRef(null);
   const dispatch = useDispatch();
@@ -25,6 +25,8 @@ const GptSearchBar = () => {
   const handleSearchButton = async (e) => {
     const userQuery = searchInput.current?.value;
     if (!userQuery) return;
+
+    setIsLoading(true);
 
     try {
       const response = await client.chat.completions.create({
@@ -53,11 +55,11 @@ const GptSearchBar = () => {
           tmdbResults: tmdbResults,
         })
       );
-
-      console.log(tmdbResults);
     } catch (err) {
       console.error("Groq API Error:", err);
       alert("Error fetching movie suggestions. Check your API key or quota.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
