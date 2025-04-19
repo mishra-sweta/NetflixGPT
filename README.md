@@ -43,6 +43,8 @@
 - Get the movie details from tmdb of the gpt recieved data
 - Put it in redux Store
 - gptSuggestions Component
+- Made the app responsive
+- added Shimmer ui
 
 # Features
 
