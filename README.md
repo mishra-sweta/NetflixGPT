@@ -45,6 +45,7 @@
 - gptSuggestions Component
 - Made the app responsive
 - added Shimmer ui
+- deployed the app on netlify
 
 # Features
 
